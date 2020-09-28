@@ -1,0 +1,2 @@
+# PyCalculator
+Calculator using PtQt
