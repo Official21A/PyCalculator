@@ -23,6 +23,18 @@ btn = QPushButton('Greet')
 btn.clicked.connect(greeting)  # Connect clicked to greeting()
 	# so in case of clicking this button by user, it will call the greeting func
 
+# if you need to pass and arg to the func use this
+"""
+def greeting(who):
+    if msg.text():
+        msg.setText('')
+    else:
+        msg.setText(f'Hello {who}')
+
+btn.clicked.connect(functools.partial(greeting, 'World!'))
+For this code to work, you need to import functools first.
+"""	
+
 layout.addWidget(btn)
 
 msg = QLabel('')
