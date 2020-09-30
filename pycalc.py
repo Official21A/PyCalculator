@@ -71,8 +71,8 @@ class PyCalcUi(QMainWindow):
                    '-': (2, 3),
                    ')': (2, 4),
                    '0': (3, 0),
-                   '00': (3, 1),
-                   '.': (3, 2),
+                   '.': (3, 1),
+                   '**': (3, 2),
                    '+': (3, 3),
                    '=': (3, 4),
                   }
@@ -108,7 +108,7 @@ class PyCalcCtrl: # this is the controller class
         self._connectSignals()
 
     def _calculateResult(self):
-    	"""Evaluate expressions."""
+        """Evaluate expressions."""
         result = self._evaluate(expression=self._view.displayText())
         self._view.setDisplayText(result)
     
@@ -116,7 +116,7 @@ class PyCalcCtrl: # this is the controller class
     def _buildExpression(self, sub_exp):
         """Build expression."""
         if self._view.displayText() == ERROR_MSG:
-        self._view.clearDisplay()
+            self._view.clearDisplay()
 
         expression = self._view.displayText() + sub_exp
         self._view.setDisplayText(expression)
